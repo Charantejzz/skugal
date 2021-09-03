@@ -1,3 +1,12 @@
+Giving a brief about the code:
+So we can see a rich text editor and two buttons on is submit and other is export
+->Submit button is disabled till we dont type anything in text editor which saves us from clicking the submit button and adding null data to the todoList
+->The export button is disabled if there are not any todo items.So that we dont generate empty PDFS
+->If we are trying to add data to todo list using Submit we can see the spinner and data getting dynamically added to the TODO LIST.
+->Each todo item will have a done button which upon clicking will remove the record from todo list.
+->with the help of export button we can get the pdf with todo List items.
+
+
 # GoogleDriveMock
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
