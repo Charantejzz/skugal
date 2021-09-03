@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>skugal</h1>
+  </header>
+
+  <div class="container">
+    <button [disabled]="checkTodo()" (click)="exportData()" class="btn btn-primary"
+      style="position: relative;bottom:10px;left:580px">Export Todo</button>
+    <angular-editor [(ngModel)]="todoItem" [config]="textboxconfig"></angular-editor>
+    <button [disabled]="checktext()" (click)="saveData()" type="submit" class="btn btn-success"
+      style="position: relative; top:10px; left:620px">Submit</button>
+
+  </div>
+  <div class="toDoList">
+    <div class="row mt-1" style="height: 70px;">
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+      <div class="col-12 col-md-6 bg-primary d-flex
+      justify-content-center align-items-center
+      text-light h3">
+        <div class="col-5 text-light h3">TO DO LIST</div>
+      </div>
+    </div>
+    <div *ngFor="let item of todoList; let index = index;" class="row mt-1" style="height:50px;">
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+      <div class="col-12 col-md-6 bg-primary d-flex
+                    justify-content-center align-items-center
+                    text-light h3">
+        <div class="col-9 text-light h3">{{item.data}}</div>
+        <input (click)="deleteTask(index)" type="button" value="Done" class="col-2 btn btn-danger">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="spinner_overlay" *ngIf="dataLoading">
+    <div class="spinner_position">
+      <div class="spinner-border" role="status">
+        <span class="sr-only" id="loadbar"></span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+<!--Division for taking input from user -->
+
+<!--Tasks added repeated divisions-->
